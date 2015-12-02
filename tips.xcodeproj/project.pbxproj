@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F53DFEFE1C0F94ED00457AC5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53DFEFD1C0F94ED00457AC5 /* SettingsViewController.swift */; };
 		F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */; };
 		F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAF01C0EA3C50055ECFD /* ViewController.swift */; };
 		F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F547FAF21C0EA3C50055ECFD /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F53DFEFD1C0F94ED00457AC5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F547FAE91C0EA3C40055ECFD /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F547FAED1C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 		F547FAE01C0EA3C40055ECFD = {
 			isa = PBXGroup;
 			children = (
+				F53DFEFD1C0F94ED00457AC5 /* SettingsViewController.swift */,
 				F547FAEB1C0EA3C40055ECFD /* tips */,
 				F547FB011C0EA3C50055ECFD /* tipsTests */,
 				F547FAEA1C0EA3C40055ECFD /* Products */,
@@ -214,6 +217,7 @@
 			files = (
 				F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */,
 				F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */,
+				F53DFEFE1C0F94ED00457AC5 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,6 +413,7 @@
 				F547FB0A1C0EA3C50055ECFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F547FB0B1C0EA3C50055ECFD /* Build configuration list for PBXNativeTarget "tipsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				F547FB0D1C0EA3C50055ECFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
