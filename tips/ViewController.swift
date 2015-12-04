@@ -5,7 +5,6 @@
 //  Created by Kyle Wilson on 12/1/15.
 //  Copyright (c) 2015 Bluyam Inc. All rights reserved.
 //
-
 // Notes from video:
 // 1) Build Layout
 // 2) Tie in Events
@@ -44,6 +43,26 @@ class ViewController: UIViewController {
         
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view did disappear")
     }
     
     @IBAction func onTap(sender: AnyObject) {
