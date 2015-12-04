@@ -10,8 +10,6 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet var defaultSlider: UISlider!
-    @IBOutlet var defaultLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +17,6 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func onValueChanged(sender: AnyObject) {
-        var percentage = defaultSlider.value
-        defaultLabel.text = String(format: "%.0f%%", percentage)
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

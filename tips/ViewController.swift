@@ -34,7 +34,11 @@ class ViewController: UIViewController {
 
     @IBAction func onEditingChanged(sender: AnyObject) {
         
-        var tipPercentages = [0.18, 0.2, 0.25]
+        totalLabel.numberOfLines = 1;
+        totalLabel.minimumScaleFactor = 8;
+        totalLabel.adjustsFontSizeToFitWidth = true;
+        
+        var tipPercentages = [0.10, 0.15, 0.2, 0.25]
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
         var billAmount = billField.text._bridgeToObjectiveC().doubleValue
