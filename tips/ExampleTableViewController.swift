@@ -1,14 +1,14 @@
 //
-//  SettingsViewController.swift
-//  
+//  ExampleTableViewController.swift
+//  tips
 //
-//  Created by Kyle Wilson on 12/5/15.
-//
+//  Created by Kyle Wilson on 12/7/15.
+//  Copyright (c) 2015 Bluyam Inc. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UITableViewController {
+class ExampleTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
