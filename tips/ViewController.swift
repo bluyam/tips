@@ -27,7 +27,10 @@ class ViewController: UIViewController {
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    var tipPercentages : [Double] = []
+    
     override func viewDidLoad() {
+        print("viewdidload")
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         tipLabel.text = "$0.00"
@@ -41,21 +44,19 @@ class ViewController: UIViewController {
         defaults.setDouble(0.15, forKey: "tipOK")
         defaults.setDouble(0.18, forKey: "tipGood")
         defaults.setDouble(0.2, forKey: "tipGreat")
-        
-        defaults.synchronize()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func onEditingChanged(sender: AnyObject) {
     
+    func recalculate() {
+        
         var tipPercentages = [defaults.doubleForKey("tipBad"),
-                              defaults.doubleForKey("tipOK"),
-                              defaults.doubleForKey("tipGood"),
-                              defaults.doubleForKey("tipGreat")]
+            defaults.doubleForKey("tipOK"),
+            defaults.doubleForKey("tipGood"),
+            defaults.doubleForKey("tipGreat")]
         
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         
@@ -70,10 +71,13 @@ class ViewController: UIViewController {
         totalLabel3.text = String(format: "$%.2f", total/3)
         totalLabel4.text = String(format: "$%.2f", total/4)
     }
+
+    @IBAction func onEditingChanged(sender: AnyObject) {
+        recalculate()
+    }
     
     override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        print("view will appear")
+        recalculate()
     }
     
     override func viewDidAppear(animated: Bool) {

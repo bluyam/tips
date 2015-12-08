@@ -25,10 +25,20 @@ class SettingsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        var badTip = defaults.doubleForKey("tipBad")
+        var okTip = defaults.doubleForKey("tipOK")
+        var goodTip = defaults.doubleForKey("tipGood")
+        var greatTip = defaults.doubleForKey("tipGreat")
+        
         badLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipBad")*100)
         OKLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipOK")*100)
         goodLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGood")*100)
         greatLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGreat")*100)
+        
+        badStepper.value = badTip;
+        okStepper.value = okTip;
+        goodStepper.value = goodTip;
+        greatStepper.value = greatTip;
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -38,21 +48,25 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @IBAction func badChanged(sender: AnyObject) {
+        defaults.removeObjectForKey("tipBad")
         defaults.setDouble(badStepper.value, forKey: "tipBad")
         badLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipBad")*100)
     }
     
     @IBAction func okChanged(sender: AnyObject) {
+        defaults.removeObjectForKey("tipOK")
         defaults.setDouble(okStepper.value, forKey: "tipOK")
         OKLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipOK")*100)
     }
 
     @IBAction func goodChanged(sender: AnyObject) {
+        defaults.removeObjectForKey("tipGood")
         defaults.setDouble(goodStepper.value, forKey: "tipGood")
         goodLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGood")*100)
     }
     
     @IBAction func greatChanged(sender: AnyObject) {
+        defaults.removeObjectForKey("tipGreat")
         defaults.setDouble(greatStepper.value, forKey: "tipGreat")
         greatLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGreat")*100)
     }
@@ -61,7 +75,6 @@ class SettingsTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     // MARK: - Table view data source
 
