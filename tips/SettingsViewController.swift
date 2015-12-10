@@ -1,5 +1,5 @@
 //
-//  SettingsTableViewController.swift
+//  SettingsViewController.swift
 //  
 //
 //  Created by Kyle Wilson on 12/6/15.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsViewController: UITableViewController {
 
     let defaults = NSUserDefaults.standardUserDefaults()
     

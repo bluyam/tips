@@ -25,14 +25,22 @@ class ViewController: UIViewController {
     @IBOutlet var totalLabel3: UILabel!
     @IBOutlet var totalLabel4: UILabel!
     
-    let defaults = NSUserDefaults.standardUserDefaults()
+    @IBOutlet var detailView: UIView!
     
+    @IBOutlet var ratingSegmentedControl: UISegmentedControl!
+    
+    let defaults = NSUserDefaults.standardUserDefaults()
+
     var tipPercentages : [Double] = []
     
     override func viewDidLoad() {
         print("viewdidload")
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        detailView.alpha = 0
+        ratingSegmentedControl.alpha = 0
+
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         totalLabel2.text = "$0.00"
@@ -72,11 +80,20 @@ class ViewController: UIViewController {
         totalLabel4.text = String(format: "$%.2f", total/4)
     }
 
+    @IBAction func onEditingBegin(sender: AnyObject) {
+
+    }
+    
     @IBAction func onEditingChanged(sender: AnyObject) {
         recalculate()
+        UIView.animateWithDuration(0.4, animations: {
+            self.detailView.alpha = 1
+            self.ratingSegmentedControl.alpha = 1
+        })
     }
     
     override func viewWillAppear(animated: Bool) {
+        detailView.frame.origin.y = 568
         recalculate()
     }
     

@@ -21,6 +21,7 @@
                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="50"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
+                                    <action selector="onEditingBegin:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="m8B-sH-JPq"/>
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="oxp-f3-uiA"/>
                                 </connections>
                             </textField>
@@ -129,6 +130,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="eYy-hO-DdP" id="941-ue-jEG"/>
+                        <outlet property="detailView" destination="QhG-fj-iaO" id="BAg-6L-fgq"/>
+                        <outlet property="ratingSegmentedControl" destination="EmX-Pt-fJ2" id="Ssq-FO-bjh"/>
                         <outlet property="tipControl" destination="EmX-Pt-fJ2" id="fo8-Tw-kHc"/>
                         <outlet property="tipLabel" destination="PW6-I6-J66" id="v7X-gs-wAA"/>
                         <outlet property="totalLabel" destination="AX2-11-gHR" id="GCC-i0-crv"/>
@@ -149,7 +152,7 @@
         <!--Settings-->
         <scene sceneID="rJB-7h-UZi">
             <objects>
-                <tableViewController id="zZT-Lb-h11" customClass="SettingsTableViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="zZT-Lb-h11" customClass="SettingsViewController" customModule="tips" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wRj-N6-pWA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
