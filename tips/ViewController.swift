@@ -33,26 +33,38 @@ class ViewController: UIViewController {
 
     var tipPercentages : [Double] = []
     
-    override func viewDidLoad() {
-        print("viewdidload")
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    func initializeAmountScreen() {
         
         detailView.alpha = 0
         ratingSegmentedControl.alpha = 0
-
+        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         totalLabel2.text = "$0.00"
         totalLabel3.text = "$0.00"
         totalLabel4.text = "$0.00"
         tipControl.selectedSegmentIndex = 1
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        var formattedNumberString = numberFormatter.stringFromNumber(0)
+        
+        billField.placeholder = numberFormatter.currencySymbol
+        
+        initializeAmountScreen()
         
         defaults.setDouble(0.1, forKey: "tipBad")
         defaults.setDouble(0.15, forKey: "tipOK")
         defaults.setDouble(0.18, forKey: "tipGood")
         defaults.setDouble(0.2, forKey: "tipGreat")
         defaults.setBool(false, forKey: "roundUp")
+        defaults.setBool(true, forKey: "shakeToClear")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -61,6 +73,9 @@ class ViewController: UIViewController {
     }
     
     func recalculate() {
+        
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
         var tipPercentages = [defaults.doubleForKey("tipBad"),
             defaults.doubleForKey("tipOK"),
@@ -75,18 +90,29 @@ class ViewController: UIViewController {
         
         if (defaults.boolForKey("roundUp")) {
             total = ceil(total)
+            tip = total - billAmount
         }
-        
-        tipLabel.text = String(format: "$%.2f", tip)
-        
-        totalLabel.text = String(format: "$%.2f", total)
-        totalLabel2.text = String(format: "$%.2f", total/2)
-        totalLabel3.text = String(format: "$%.2f", total/3)
-        totalLabel4.text = String(format: "$%.2f", total/4)
+
+        tipLabel.text = numberFormatter.stringFromNumber(tip)
+        totalLabel.text = numberFormatter.stringFromNumber(total)
+        totalLabel2.text = numberFormatter.stringFromNumber(total/2)
+        totalLabel3.text = numberFormatter.stringFromNumber(total/3)
+        totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
 
     @IBAction func onEditingBegin(sender: AnyObject) {
 
+    }
+    
+    override func canBecomeFirstResponder() -> Bool {
+        return true
+    }
+    
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+        if (defaults.boolForKey("shakeToClear")) {
+            self.billField.text = ""
+            initializeAmountScreen()
+        }
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
