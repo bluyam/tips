@@ -52,6 +52,7 @@ class ViewController: UIViewController {
         defaults.setDouble(0.15, forKey: "tipOK")
         defaults.setDouble(0.18, forKey: "tipGood")
         defaults.setDouble(0.2, forKey: "tipGreat")
+        defaults.setBool(false, forKey: "roundUp")
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +72,10 @@ class ViewController: UIViewController {
         var billAmount = billField.text._bridgeToObjectiveC().doubleValue
         var tip =  billAmount * tipPercentage
         var total = billAmount + tip
+        
+        if (defaults.boolForKey("roundUp")) {
+            total = ceil(total)
+        }
         
         tipLabel.text = String(format: "$%.2f", tip)
         

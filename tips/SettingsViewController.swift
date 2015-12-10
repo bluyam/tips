@@ -22,6 +22,8 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var goodStepper: UIStepper!
     @IBOutlet var greatStepper: UIStepper!
     
+    @IBOutlet var roundSwitch: UISwitch!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,11 +42,19 @@ class SettingsViewController: UITableViewController {
         goodStepper.value = goodTip;
         greatStepper.value = greatTip;
         
+        roundSwitch.on = defaults.boolForKey("roundUp")
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    @IBAction func roundSwitchChanged(sender: AnyObject) {
+        var previousState = defaults.boolForKey("roundUp")
+        defaults.removeObjectForKey("roundUp")
+        defaults.setBool(!previousState, forKey: "roundUp")
     }
     
     @IBAction func badChanged(sender: AnyObject) {
