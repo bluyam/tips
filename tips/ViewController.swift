@@ -13,9 +13,8 @@
 //  Outlets: Name view elements in code
 //  Actions: Tie in to event
 //  
-//  TODO: Animations (Ask)
-//        Include Tax (If time; requires outside API and state knowledge)
-//        Save Tip Defaults to plist
+//  TODO: Save Tip Defaults to plist
+//        Make text fit on screen
 //        Obfuscate UI
 
 import UIKit
@@ -41,6 +40,7 @@ class ViewController: UIViewController {
     
     func initializeAmountScreen() {
         
+        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         totalLabel2.text = "$0.00"
@@ -55,6 +55,7 @@ class ViewController: UIViewController {
         
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        self.billField.tintColor = UIColor(white: 0.43, alpha: 1)
         
         detailView.alpha = 0
         ratingSegmentedControl.alpha = 0
@@ -85,6 +86,8 @@ class ViewController: UIViewController {
         
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
+        
+        billField.placeholder = numberFormatter.currencySymbol
         
         var tipPercentages = [defaults.doubleForKey("tipBad"),
             defaults.doubleForKey("tipOK"),
@@ -142,6 +145,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         recalculate()
     }
     
