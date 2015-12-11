@@ -14,8 +14,8 @@
 //  Actions: Tie in to event
 //  
 //  TODO: Save Tip Defaults to plist
-//        Make text fit on screen
-//        Obfuscate UI
+//        Make text fit in box
+//        Make README
 
 import UIKit
 
@@ -55,13 +55,10 @@ class ViewController: UIViewController {
         
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        self.billField.tintColor = UIColor(white: 0.43, alpha: 1)
+        self.billField.tintColor = UIColor(white: 0.43, alpha: 0.4)
         
         detailView.alpha = 0
         ratingSegmentedControl.alpha = 0
-        
-        //print(originY)
-        print(detailView.frame.origin.y)
         
         billField.placeholder = numberFormatter.currencySymbol
         
@@ -74,7 +71,6 @@ class ViewController: UIViewController {
         defaults.setBool(false, forKey: "roundUp")
         defaults.setBool(true, forKey: "shakeToClear")
         
-        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -112,10 +108,6 @@ class ViewController: UIViewController {
         totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
     
-    override func canBecomeFirstResponder() -> Bool {
-        return true
-    }
-    
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (defaults.boolForKey("shakeToClear")) {
             self.billField.text = ""
@@ -145,8 +137,12 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         recalculate()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        billField.becomeFirstResponder()
     }
     
     @IBAction func onTap(sender: AnyObject) {

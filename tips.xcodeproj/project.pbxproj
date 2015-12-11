@@ -14,6 +14,7 @@
 		F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F547FAF71C0EA3C50055ECFD /* LaunchScreen.xib */; };
 		F547FB051C0EA3C50055ECFD /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FB041C0EA3C50055ECFD /* tipsTests.swift */; };
 		F54F76101C153F1800907E59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F760F1C153F1800907E59 /* SettingsViewController.swift */; };
+		F55666951C1B59CE008302D1 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F55666941C1B59CE008302D1 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F547FAE91C0EA3C40055ECFD /* tips.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tips.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F547FAE91C0EA3C40055ECFD /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F547FAED1C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F547FAF01C0EA3C50055ECFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +39,7 @@
 		F547FB031C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FB041C0EA3C50055ECFD /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
 		F54F760F1C153F1800907E59 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F55666941C1B59CE008302D1 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,7 @@
 		F547FAEA1C0EA3C40055ECFD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F547FAE91C0EA3C40055ECFD /* tips.app */,
+				F547FAE91C0EA3C40055ECFD /* Tipster.app */,
 				F547FAFE1C0EA3C50055ECFD /* tipsTests.xctest */,
 			);
 			name = Products;
@@ -82,6 +84,7 @@
 				F54F760F1C153F1800907E59 /* SettingsViewController.swift */,
 				F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */,
 				F547FAF01C0EA3C50055ECFD /* ViewController.swift */,
+				F55666941C1B59CE008302D1 /* iTunesArtwork.png */,
 				F547FAF21C0EA3C50055ECFD /* Main.storyboard */,
 				F547FAF51C0EA3C50055ECFD /* Images.xcassets */,
 				F547FAF71C0EA3C50055ECFD /* LaunchScreen.xib */,
@@ -132,7 +135,7 @@
 			);
 			name = tips;
 			productName = tips;
-			productReference = F547FAE91C0EA3C40055ECFD /* tips.app */;
+			productReference = F547FAE91C0EA3C40055ECFD /* Tipster.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F547FAFD1C0EA3C50055ECFD /* tipsTests */ = {
@@ -198,6 +201,7 @@
 			files = (
 				F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */,
 				F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */,
+				F55666951C1B59CE008302D1 /* iTunesArtwork.png in Resources */,
 				F547FAF61C0EA3C50055ECFD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +354,7 @@
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tipster;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
@@ -364,7 +368,7 @@
 				INFOPLIST_FILE = tips/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Tipster;
 				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
