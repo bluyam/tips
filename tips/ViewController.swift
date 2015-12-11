@@ -12,6 +12,11 @@
 //
 //  Outlets: Name view elements in code
 //  Actions: Tie in to event
+//  
+//  TODO: Animations (Ask)
+//        Include Tax (If time; requires outside API and state knowledge)
+//        Save Tip Defaults to plist
+//        Obfuscate UI
 
 import UIKit
 
@@ -25,6 +30,7 @@ class ViewController: UIViewController {
     @IBOutlet var totalLabel3: UILabel!
     @IBOutlet var totalLabel4: UILabel!
     
+    @IBOutlet var fullView: UIView!
     @IBOutlet var detailView: UIView!
     
     @IBOutlet var ratingSegmentedControl: UISegmentedControl!
@@ -34,9 +40,6 @@ class ViewController: UIViewController {
     var tipPercentages : [Double] = []
     
     func initializeAmountScreen() {
-        
-        detailView.alpha = 0
-        ratingSegmentedControl.alpha = 0
         
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
@@ -52,7 +55,12 @@ class ViewController: UIViewController {
         
         var numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        var formattedNumberString = numberFormatter.stringFromNumber(0)
+        
+        detailView.alpha = 0
+        ratingSegmentedControl.alpha = 0
+        
+        //print(originY)
+        print(detailView.frame.origin.y)
         
         billField.placeholder = numberFormatter.currencySymbol
         
@@ -65,6 +73,7 @@ class ViewController: UIViewController {
         defaults.setBool(false, forKey: "roundUp")
         defaults.setBool(true, forKey: "shakeToClear")
         
+        billField.becomeFirstResponder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -99,10 +108,6 @@ class ViewController: UIViewController {
         totalLabel3.text = numberFormatter.stringFromNumber(total/3)
         totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
-
-    @IBAction func onEditingBegin(sender: AnyObject) {
-
-    }
     
     override func canBecomeFirstResponder() -> Bool {
         return true
@@ -111,36 +116,33 @@ class ViewController: UIViewController {
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
         if (defaults.boolForKey("shakeToClear")) {
             self.billField.text = ""
+            UIView.animateWithDuration(0.3, animations: {
+                self.detailView.alpha = 0
+                self.ratingSegmentedControl.alpha = 0
+            })
             initializeAmountScreen()
         }
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
         recalculate()
-        UIView.animateWithDuration(0.4, animations: {
-            self.detailView.alpha = 1
-            self.ratingSegmentedControl.alpha = 1
-        })
+        if (billField.text == "") {
+            UIView.animateWithDuration(0.3, animations: {
+                self.detailView.alpha = 0
+                self.ratingSegmentedControl.alpha = 0
+            })
+        }
+        else {
+            UIView.animateWithDuration(0.3, animations: {
+                self.detailView.alpha = 1
+                self.ratingSegmentedControl.alpha = 1
+            })
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
-        detailView.frame.origin.y = 568
+        super.viewWillAppear(animated)
         recalculate()
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        print("view did appear")
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("view will disappear")
-    }
-    
-    override func viewDidDisappear(animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("view did disappear")
     }
     
     @IBAction func onTap(sender: AnyObject) {
