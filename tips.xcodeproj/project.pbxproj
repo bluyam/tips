@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F52622C41C1CF97B00F79090 /* LaunchIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F52622C31C1CF97B00F79090 /* LaunchIcon.png */; };
 		F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */; };
 		F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAF01C0EA3C50055ECFD /* ViewController.swift */; };
 		F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F547FAF21C0EA3C50055ECFD /* Main.storyboard */; };
@@ -14,7 +15,6 @@
 		F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F547FAF71C0EA3C50055ECFD /* LaunchScreen.xib */; };
 		F547FB051C0EA3C50055ECFD /* tipsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FB041C0EA3C50055ECFD /* tipsTests.swift */; };
 		F54F76101C153F1800907E59 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54F760F1C153F1800907E59 /* SettingsViewController.swift */; };
-		F55666951C1B59CE008302D1 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = F55666941C1B59CE008302D1 /* iTunesArtwork.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F52622C31C1CF97B00F79090 /* LaunchIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchIcon.png; sourceTree = "<group>"; };
 		F547FAE91C0EA3C40055ECFD /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F547FAED1C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,7 +40,6 @@
 		F547FB031C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FB041C0EA3C50055ECFD /* tipsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tipsTests.swift; sourceTree = "<group>"; };
 		F54F760F1C153F1800907E59 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		F55666941C1B59CE008302D1 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,9 +84,9 @@
 				F54F760F1C153F1800907E59 /* SettingsViewController.swift */,
 				F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */,
 				F547FAF01C0EA3C50055ECFD /* ViewController.swift */,
-				F55666941C1B59CE008302D1 /* iTunesArtwork.png */,
 				F547FAF21C0EA3C50055ECFD /* Main.storyboard */,
 				F547FAF51C0EA3C50055ECFD /* Images.xcassets */,
+				F52622C31C1CF97B00F79090 /* LaunchIcon.png */,
 				F547FAF71C0EA3C50055ECFD /* LaunchScreen.xib */,
 				F547FAEC1C0EA3C40055ECFD /* Supporting Files */,
 			);
@@ -162,7 +162,9 @@
 		F547FAE11C0EA3C40055ECFD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0640;
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Bluyam Inc.";
 				TargetAttributes = {
 					F547FAE81C0EA3C40055ECFD = {
@@ -201,7 +203,7 @@
 			files = (
 				F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */,
 				F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */,
-				F55666951C1B59CE008302D1 /* iTunesArtwork.png in Resources */,
+				F52622C41C1CF97B00F79090 /* LaunchIcon.png in Resources */,
 				F547FAF61C0EA3C50055ECFD /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -285,6 +288,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -300,7 +304,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -312,6 +316,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -338,7 +343,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -352,8 +357,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tips/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluyam.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Tipster;
 				PROVISIONING_PROFILE = "";
 			};
@@ -366,8 +372,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = tips/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluyam.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = Tipster;
 				PROVISIONING_PROFILE = "";
 			};
@@ -387,6 +394,7 @@
 				);
 				INFOPLIST_FILE = tipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluyam.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tips.app/tips";
 			};
@@ -402,6 +410,7 @@
 				);
 				INFOPLIST_FILE = tipsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.bluyam.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/tips.app/tips";
 			};

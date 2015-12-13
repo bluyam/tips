@@ -22,6 +22,7 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var billField: UITextField!
+    @IBOutlet var percentageLabel: UILabel!
     @IBOutlet var tipLabel: UILabel!
     @IBOutlet var totalLabel: UILabel!
     @IBOutlet var tipControl: UISegmentedControl!
@@ -53,14 +54,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        var numberFormatter = NSNumberFormatter()
+        let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
-        self.billField.tintColor = UIColor(white: 0.43, alpha: 0.4)
+        self.billField.tintColor = UIColor(white: 0.3, alpha: 0.3)
         
         detailView.alpha = 0
         ratingSegmentedControl.alpha = 0
         
         billField.placeholder = numberFormatter.currencySymbol
+        billField.becomeFirstResponder()
         
         initializeAmountScreen()
         
@@ -68,7 +70,7 @@ class ViewController: UIViewController {
         defaults.setDouble(0.15, forKey: "tipOK")
         defaults.setDouble(0.18, forKey: "tipGood")
         defaults.setDouble(0.2, forKey: "tipGreat")
-        defaults.setBool(false, forKey: "roundUp")
+        defaults.setBool(false, forKey: "round")
         defaults.setBool(true, forKey: "shakeToClear")
         
     }
@@ -80,24 +82,26 @@ class ViewController: UIViewController {
     
     func recalculate() {
         
-        var numberFormatter = NSNumberFormatter()
+        let numberFormatter = NSNumberFormatter()
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
         billField.placeholder = numberFormatter.currencySymbol
+
         
         var tipPercentages = [defaults.doubleForKey("tipBad"),
             defaults.doubleForKey("tipOK"),
             defaults.doubleForKey("tipGood"),
             defaults.doubleForKey("tipGreat")]
         
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
+        percentageLabel.text = String(format: "+ %.0f%%", tipPercentage*100)
         
-        var billAmount = billField.text._bridgeToObjectiveC().doubleValue
+        let billAmount = billField.text!._bridgeToObjectiveC().doubleValue
         var tip =  billAmount * tipPercentage
         var total = billAmount + tip
         
-        if (defaults.boolForKey("roundUp")) {
-            total = ceil(total)
+        if (defaults.boolForKey("round")) {
+            total = round(total)
             tip = total - billAmount
         }
 
@@ -108,7 +112,7 @@ class ViewController: UIViewController {
         totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
     
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent) {
+    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if (defaults.boolForKey("shakeToClear")) {
             self.billField.text = ""
             UIView.animateWithDuration(0.3, animations: {
@@ -116,18 +120,20 @@ class ViewController: UIViewController {
                 self.ratingSegmentedControl.alpha = 0
             })
             initializeAmountScreen()
+            billField.becomeFirstResponder()
         }
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
-        recalculate()
         if (billField.text == "") {
             UIView.animateWithDuration(0.3, animations: {
                 self.detailView.alpha = 0
                 self.ratingSegmentedControl.alpha = 0
             })
+            recalculate()
         }
         else {
+            recalculate()
             UIView.animateWithDuration(0.3, animations: {
                 self.detailView.alpha = 1
                 self.ratingSegmentedControl.alpha = 1
@@ -142,7 +148,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        billField.becomeFirstResponder()
     }
     
     @IBAction func onTap(sender: AnyObject) {

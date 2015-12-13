@@ -12,6 +12,7 @@ class SettingsViewController: UITableViewController {
 
     let defaults = NSUserDefaults.standardUserDefaults()
     
+    @IBOutlet var settingsTableView: UITableView!
     @IBOutlet var badLabel: UILabel!
     @IBOutlet var OKLabel: UILabel!
     @IBOutlet var goodLabel: UILabel!
@@ -28,10 +29,12 @@ class SettingsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var badTip = defaults.doubleForKey("tipBad")
-        var okTip = defaults.doubleForKey("tipOK")
-        var goodTip = defaults.doubleForKey("tipGood")
-        var greatTip = defaults.doubleForKey("tipGreat")
+        settingsTableView.backgroundView = nil
+        
+        let badTip = defaults.doubleForKey("tipBad")
+        let okTip = defaults.doubleForKey("tipOK")
+        let goodTip = defaults.doubleForKey("tipGood")
+        let greatTip = defaults.doubleForKey("tipGreat")
         
         badLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipBad")*100)
         OKLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipOK")*100)
@@ -43,7 +46,7 @@ class SettingsViewController: UITableViewController {
         goodStepper.value = goodTip;
         greatStepper.value = greatTip;
         
-        roundSwitch.on = defaults.boolForKey("roundUp")
+        roundSwitch.on = defaults.boolForKey("round")
         shakeSwitch.on = defaults.boolForKey("shakeToClear")
         
         // Uncomment the following line to preserve selection between presentations
@@ -54,13 +57,13 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func roundSwitchChanged(sender: AnyObject) {
-        var previousState = defaults.boolForKey("roundUp")
-        defaults.removeObjectForKey("roundUp")
-        defaults.setBool(!previousState, forKey: "roundUp")
+        let previousState = defaults.boolForKey("round")
+        defaults.removeObjectForKey("round")
+        defaults.setBool(!previousState, forKey: "round")
     }
     
     @IBAction func shakeSwitchChanged(sender: AnyObject) {
-        var previousState = defaults.boolForKey("shakeToClear")
+        let previousState = defaults.boolForKey("shakeToClear")
         defaults.removeObjectForKey("shakeToClear")
         defaults.setBool(!previousState, forKey: "shakeToClear")
     }

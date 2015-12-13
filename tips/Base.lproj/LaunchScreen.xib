@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -10,24 +11,24 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork.png" translatesAutoresizingMaskIntoConstraints="NO" id="nDW-xG-t0S">
-                    <rect key="frame" x="172" y="85" width="256" height="256"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="goA-t4-hmL">
+                    <rect key="frame" x="172" y="172" width="256" height="256"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="256" id="3Dt-Pl-e8G"/>
-                        <constraint firstAttribute="width" constant="256" id="pCf-Kz-gnW"/>
+                        <constraint firstAttribute="height" constant="256" id="Ila-QK-dUe"/>
+                        <constraint firstAttribute="width" constant="256" id="SGZ-hi-U9a"/>
                     </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="0.65281166447575756" blue="0.40745251223333206" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nDW-xG-t0S" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="AxV-hn-rX8"/>
-                <constraint firstItem="nDW-xG-t0S" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="85" id="lOS-2b-ucE"/>
+                <constraint firstItem="goA-t4-hmL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="P6w-wr-gHD"/>
+                <constraint firstItem="goA-t4-hmL" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jEu-Km-hOT"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="526" y="349"/>
         </view>
     </objects>
     <resources>
-        <image name="iTunesArtwork.png" width="512" height="512"/>
+        <image name="LaunchIcon.png" width="512" height="512"/>
     </resources>
 </document>
