@@ -130,7 +130,6 @@ class ViewController: UIViewController {
                 self.detailView.alpha = 0
                 self.ratingSegmentedControl.alpha = 0
             })
-            recalculate()
         }
         else {
             recalculate()

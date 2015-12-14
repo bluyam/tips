@@ -11,7 +11,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="goA-t4-hmL">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="goA-t4-hmL">
                     <rect key="frame" x="172" y="172" width="256" height="256"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="256" id="Ila-QK-dUe"/>
@@ -29,6 +29,6 @@
         </view>
     </objects>
     <resources>
-        <image name="LaunchIcon.png" width="512" height="512"/>
+        <image name="LaunchImage.png" width="512" height="512"/>
     </resources>
 </document>
