@@ -1,6 +1,4 @@
-# tipster
-
-# Pre-Work - Tipster
+# Pre-work - Tipster
 
 Tipster is a simple tip calculator application for iOS.
 
@@ -37,8 +35,6 @@ Here's a walkthrough of implemented user stories:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
-
-Describe any challenges encountered while building the app.
 
 Although I was able to manipulate the alpha value of the detailView, I was unsuccessful in my attempts to implement sliding animations on the frame properties. I believe it has something to do with the view hierarchy, and I am still trying to resolve the issue. In addition, given more time and assistance, I would like to change the color scheme of the settings view to match that of the initial view.
 
