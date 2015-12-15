@@ -1,5 +1,7 @@
 # Pre-work - Tipster
 
+<img src='http://i.imgur.com/EWypJfG.png' title='logo' width='' alt='logo'/>
+
 Tipster is a tip calculator application for iOS.
 
 Submitted by: Kyle Wilson
