@@ -1,6 +1,6 @@
 # Pre-work - Tipster
 
-<img src='http://i.imgur.com/EWypJfG.png' title='logo' width='' alt='logo'/>
+<img src='http://i.imgur.com/EWypJfG.png' title='logo' width='50%' alt='logo'/>
 
 Tipster is a tip calculator application for iOS.
 
@@ -55,3 +55,5 @@ Although I was able to manipulate the alpha value of the detailView, I was unsuc
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+    
+    Original logo by [Vecteazy](https://www.iconfinder.com/icons/532625/cash_coins_hand_income_investment_money_revenue_icon#size=128).
