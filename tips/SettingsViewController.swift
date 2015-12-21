@@ -98,6 +98,13 @@ class SettingsViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("\(indexPath)")
+        if indexPath.section == 0 && indexPath.row == 2 {
+            
+        }
+    }
 
     /* override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
           // #warning Potentially incomplete method implementation.
