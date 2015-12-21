@@ -17,6 +17,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var OKLabel: UILabel!
     @IBOutlet var goodLabel: UILabel!
     @IBOutlet var greatLabel: UILabel!
+    @IBOutlet var taxPercentageLabel: UILabel!
     
     @IBOutlet var badStepper: UIStepper!
     @IBOutlet var okStepper: UIStepper!
@@ -25,6 +26,18 @@ class SettingsViewController: UITableViewController {
     
     @IBOutlet var roundSwitch: UISwitch!
     @IBOutlet var shakeSwitch: UISwitch!
+    
+    func refreshTaxPercentageLabel() {
+        let taxPercentage = defaults.doubleForKey("taxPercentage")
+        let includeTax = defaults.boolForKey("includeTax")
+        
+        if (includeTax) {
+            taxPercentageLabel.text = String(format: "%.2f%%", taxPercentage)
+        }
+        else {
+            taxPercentageLabel.text = "None"
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +48,13 @@ class SettingsViewController: UITableViewController {
         let okTip = defaults.doubleForKey("tipOK")
         let goodTip = defaults.doubleForKey("tipGood")
         let greatTip = defaults.doubleForKey("tipGreat")
+
+        badLabel.text = String(format: "%.0f%%", badTip*100)
+        OKLabel.text = String(format: "%.0f%%", okTip*100)
+        goodLabel.text = String(format: "%.0f%%", goodTip*100)
+        greatLabel.text = String(format: "%.0f%%", greatTip*100)
         
-        badLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipBad")*100)
-        OKLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipOK")*100)
-        goodLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGood")*100)
-        greatLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGreat")*100)
+        refreshTaxPercentageLabel()
         
         badStepper.value = badTip;
         okStepper.value = okTip;
@@ -98,13 +113,6 @@ class SettingsViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("\(indexPath)")
-        if indexPath.section == 0 && indexPath.row == 2 {
-            
-        }
-    }
 
     /* override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
           // #warning Potentially incomplete method implementation.
@@ -172,5 +180,9 @@ class SettingsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func viewWillAppear(animated: Bool) {
+        refreshTaxPercentageLabel()
+    }
 
 }

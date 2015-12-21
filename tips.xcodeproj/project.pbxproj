@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F524697E1C27A75F00FE7404 /* TaxSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */; };
 		F52622C41C1CF97B00F79090 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F52622C31C1CF97B00F79090 /* LaunchImage.png */; };
 		F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */; };
 		F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAF01C0EA3C50055ECFD /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaxSettingsViewController.swift; path = ../TaxSettingsViewController.swift; sourceTree = "<group>"; };
 		F52622C31C1CF97B00F79090 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		F547FAE91C0EA3C40055ECFD /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F547FAED1C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		F547FAEB1C0EA3C40055ECFD /* tips */ = {
 			isa = PBXGroup;
 			children = (
+				F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */,
 				F54F760F1C153F1800907E59 /* SettingsViewController.swift */,
 				F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */,
 				F547FAF01C0EA3C50055ECFD /* ViewController.swift */,
@@ -225,6 +228,7 @@
 				F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */,
 				F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */,
 				F54F76101C153F1800907E59 /* SettingsViewController.swift in Sources */,
+				F524697E1C27A75F00FE7404 /* TaxSettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

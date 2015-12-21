@@ -72,6 +72,8 @@ class ViewController: UIViewController {
         defaults.setDouble(0.2, forKey: "tipGreat")
         defaults.setBool(false, forKey: "round")
         defaults.setBool(true, forKey: "shakeToClear")
+        defaults.setBool(false, forKey: "includeTax")
+        defaults.setDouble(8.25, forKey: "taxPercentage")
         
     }
 
@@ -94,9 +96,16 @@ class ViewController: UIViewController {
             defaults.doubleForKey("tipGreat")]
         
         let tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
-        percentageLabel.text = String(format: "+ %.0f%%", tipPercentage*100)
+        percentageLabel.text = String(format: "+%.0f%%", tipPercentage*100)
         
-        let billAmount = billField.text!._bridgeToObjectiveC().doubleValue
+        var billAmount = billField.text!._bridgeToObjectiveC().doubleValue
+        
+        if (defaults.boolForKey("includeTax")) {
+            billAmount = billAmount * (1 + defaults.doubleForKey("taxPercentage")/100)
+        }
+        
+        print("\(billAmount)")
+        
         var tip =  billAmount * tipPercentage
         var total = billAmount + tip
         
