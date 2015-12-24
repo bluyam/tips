@@ -41,7 +41,6 @@ class ViewController: UIViewController {
     
     func initializeAmountScreen() {
         
-        
         tipLabel.text = "$0.00"
         totalLabel.text = "$0.00"
         totalLabel2.text = "$0.00"
@@ -75,6 +74,8 @@ class ViewController: UIViewController {
         defaults.setBool(false, forKey: "includeTax")
         defaults.setDouble(8.25, forKey: "taxPercentage")
         
+        self.detailView.layer.frame.origin.y = self.view.frame.maxY
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +89,6 @@ class ViewController: UIViewController {
         numberFormatter.numberStyle = NSNumberFormatterStyle.CurrencyStyle
         
         billField.placeholder = numberFormatter.currencySymbol
-
         
         var tipPercentages = [defaults.doubleForKey("tipBad"),
             defaults.doubleForKey("tipOK"),
@@ -103,8 +103,6 @@ class ViewController: UIViewController {
         if (defaults.boolForKey("includeTax")) {
             billAmount = billAmount * (1 + defaults.doubleForKey("taxPercentage")/100)
         }
-        
-        print("\(billAmount)")
         
         var tip =  billAmount * tipPercentage
         var total = billAmount + tip
@@ -121,28 +119,33 @@ class ViewController: UIViewController {
         totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
     
+    // probably an autolayout issue
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if (defaults.boolForKey("shakeToClear")) {
+            self.hideDetailView()
             self.billField.text = ""
-            UIView.animateWithDuration(0.3, animations: {
-                self.detailView.alpha = 0
-                self.ratingSegmentedControl.alpha = 0
-            })
-            initializeAmountScreen()
-            billField.becomeFirstResponder()
+            // billField.becomeFirstResponder()
         }
+    }
+    
+    func hideDetailView() {
+        UIView.animateWithDuration(0.4, animations: {
+            self.detailView.layer.frame.origin.y = self.view.frame.maxY
+            self.ratingSegmentedControl.layer.frame.origin.y = CGFloat(self.view.frame.maxY-44)
+            self.detailView.alpha = 0
+            self.ratingSegmentedControl.alpha = 0
+        })
     }
     
     @IBAction func onEditingChanged(sender: AnyObject) {
         if (billField.text == "") {
-            UIView.animateWithDuration(0.3, animations: {
-                self.detailView.alpha = 0
-                self.ratingSegmentedControl.alpha = 0
-            })
+            self.hideDetailView()
         }
         else {
             recalculate()
-            UIView.animateWithDuration(0.3, animations: {
+            UIView.animateWithDuration(0.4, animations: {
+                self.detailView.frame.origin.y = CGFloat(219)
+                self.ratingSegmentedControl.frame.origin.y = CGFloat(175)
                 self.detailView.alpha = 1
                 self.ratingSegmentedControl.alpha = 1
             })
