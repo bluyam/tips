@@ -27,6 +27,8 @@ class SettingsViewController: UITableViewController {
     @IBOutlet var roundSwitch: UISwitch!
     @IBOutlet var shakeSwitch: UISwitch!
     
+    @IBOutlet var includeTaxCell: UITableViewCell!
+    
     func refreshTaxPercentageLabel() {
         let taxPercentage = defaults.doubleForKey("taxPercentage")
         let includeTax = defaults.boolForKey("includeTax")
@@ -105,6 +107,12 @@ class SettingsViewController: UITableViewController {
         defaults.removeObjectForKey("tipGreat")
         defaults.setDouble(greatStepper.value, forKey: "tipGreat")
         greatLabel.text = String(format: "%.0f%%", defaults.doubleForKey("tipGreat")*100)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        if includeTaxCell.selected {
+            includeTaxCell.selected = false
+        }
     }
     
     override func didReceiveMemoryWarning() {
