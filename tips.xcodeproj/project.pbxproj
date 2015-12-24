@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F524697E1C27A75F00FE7404 /* TaxSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */; };
 		F52622C41C1CF97B00F79090 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F52622C31C1CF97B00F79090 /* LaunchImage.png */; };
+		F527794F1C2BA28300797EF5 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = F527794E1C2BA28300797EF5 /* user.png */; };
 		F547FAEF1C0EA3C50055ECFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */; };
 		F547FAF11C0EA3C50055ECFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F547FAF01C0EA3C50055ECFD /* ViewController.swift */; };
 		F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F547FAF21C0EA3C50055ECFD /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaxSettingsViewController.swift; path = ../TaxSettingsViewController.swift; sourceTree = "<group>"; };
 		F52622C31C1CF97B00F79090 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
+		F527794E1C2BA28300797EF5 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = ../../../../Downloads/user.png; sourceTree = "<group>"; };
 		F547FAE91C0EA3C40055ECFD /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F547FAED1C0EA3C50055ECFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */,
 				F547FAF01C0EA3C50055ECFD /* ViewController.swift */,
 				F547FAF21C0EA3C50055ECFD /* Main.storyboard */,
+				F527794E1C2BA28300797EF5 /* user.png */,
 				F547FAF51C0EA3C50055ECFD /* Images.xcassets */,
 				F52622C31C1CF97B00F79090 /* LaunchImage.png */,
 				F547FAF71C0EA3C50055ECFD /* LaunchScreen.xib */,
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */,
+				F527794F1C2BA28300797EF5 /* user.png in Resources */,
 				F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */,
 				F52622C41C1CF97B00F79090 /* LaunchImage.png in Resources */,
 				F547FAF61C0EA3C50055ECFD /* Images.xcassets in Resources */,

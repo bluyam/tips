@@ -49,24 +49,6 @@
                                         <color key="textColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="IIII" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aM5-hg-eqi">
-                                        <rect key="frame" x="20" y="290" width="63" height="19"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
-                                        <color key="textColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="III" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9I-p2-Bu4">
-                                        <rect key="frame" x="20" y="234" width="42" height="19"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
-                                        <color key="textColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="II" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKp-oI-kHA">
-                                        <rect key="frame" x="20" y="178" width="42" height="19"/>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="29"/>
-                                        <color key="textColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="$20.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PW6-I6-J66">
                                         <rect key="frame" x="440" y="8" width="140" height="43"/>
                                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
@@ -85,19 +67,43 @@
                                         <color key="textColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zca-qq-ruI">
+                                        <rect key="frame" x="20" y="284" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="Lr7-N7-BeS">
+                                        <rect key="frame" x="42" y="284" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-Np-YXR">
+                                        <rect key="frame" x="64" y="284" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="cN9-ah-dGM">
+                                        <rect key="frame" x="86" y="284" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="JaT-Hx-AJe">
+                                        <rect key="frame" x="20" y="235" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="PdO-e8-v7c">
+                                        <rect key="frame" x="42" y="235" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQf-kB-Kn8">
+                                        <rect key="frame" x="64" y="235" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="YMg-It-LKx">
+                                        <rect key="frame" x="20" y="184" width="21" height="21"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="user.png" translatesAutoresizingMaskIntoConstraints="NO" id="oQj-wJ-bQB">
+                                        <rect key="frame" x="42" y="184" width="21" height="21"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.34509803921568627" green="0.37647058823529411" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="C7M-wQ-nfj" secondAttribute="trailing" constant="20" id="2ax-fN-rza"/>
-                                    <constraint firstItem="g9I-p2-Bu4" firstAttribute="top" secondItem="fKp-oI-kHA" secondAttribute="bottom" constant="15" id="3fF-dY-A0M"/>
                                     <constraint firstItem="AX2-11-gHR" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="15" id="891-0j-8By"/>
                                     <constraint firstAttribute="trailing" secondItem="GIh-dW-OWj" secondAttribute="trailing" constant="20" id="FT6-Gt-Ec9"/>
                                     <constraint firstItem="urB-gB-yf0" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="20" symbolic="YES" id="Jwj-KY-l6a"/>
-                                    <constraint firstItem="aM5-hg-eqi" firstAttribute="top" secondItem="g9I-p2-Bu4" secondAttribute="bottom" constant="15" id="M3W-jf-43b"/>
                                     <constraint firstItem="C7M-wQ-nfj" firstAttribute="top" secondItem="GIh-dW-OWj" secondAttribute="bottom" constant="13" id="Yt5-a5-2xE"/>
                                     <constraint firstAttribute="trailing" secondItem="6QE-La-IwY" secondAttribute="trailing" constant="20" id="iCa-tv-bAh"/>
                                     <constraint firstAttribute="bottom" secondItem="6QE-La-IwY" secondAttribute="bottom" constant="39" id="mwu-fX-tDH"/>
-                                    <constraint firstAttribute="bottom" secondItem="aM5-hg-eqi" secondAttribute="bottom" constant="37" id="p2N-PE-308"/>
                                     <constraint firstAttribute="trailing" secondItem="PW6-I6-J66" secondAttribute="trailing" constant="20" id="qaZ-SL-MOe"/>
                                     <constraint firstItem="6QE-La-IwY" firstAttribute="top" secondItem="C7M-wQ-nfj" secondAttribute="bottom" constant="13" id="rcZ-7W-acG"/>
                                     <constraint firstAttribute="trailing" secondItem="AX2-11-gHR" secondAttribute="trailing" constant="20" id="uex-Bb-TYe"/>
@@ -584,5 +590,8 @@
             <point key="canvasLocation" x="371.25" y="338.02816901408448"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="user.png" width="128" height="128"/>
+    </resources>
     <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
