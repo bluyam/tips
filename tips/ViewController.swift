@@ -36,6 +36,8 @@ class ViewController: UIViewController {
     @IBOutlet var ratingSegmentedControl: UISegmentedControl!
     
     let defaults = NSUserDefaults.standardUserDefaults()
+    
+    var firstLoad = true
 
     var tipPercentages : [Double] = []
     
@@ -74,8 +76,14 @@ class ViewController: UIViewController {
         defaults.setBool(false, forKey: "includeTax")
         defaults.setDouble(8.25, forKey: "taxPercentage")
         
-        self.detailView.layer.frame.origin.y = self.view.frame.maxY
-        
+        self.hideDetailView()
+        print(self.detailView.layer.frame.origin.y)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        self.detailView.translatesAutoresizingMaskIntoConstraints = true
+        self.ratingSegmentedControl.translatesAutoresizingMaskIntoConstraints = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -142,6 +150,11 @@ class ViewController: UIViewController {
             self.hideDetailView()
         }
         else {
+            if (firstLoad) {
+                self.detailView.layer.frame.origin.y = self.view.frame.maxY
+                self.ratingSegmentedControl.layer.frame.origin.y = CGFloat(self.view.frame.maxY-44)
+                firstLoad = false
+            }
             recalculate()
             UIView.animateWithDuration(0.4, animations: {
                 self.detailView.frame.origin.y = CGFloat(219)
