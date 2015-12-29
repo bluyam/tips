@@ -25,6 +25,7 @@ The following **additional** features are implemented:
 - [x] Automatically displays bill splits for groups of 2-4 people
 - [x] Round to nearest whole currency unit option
 - [x] Include tax before tip option
+- [x] Settings persist between iterations
 - [x] Shake to clear option
 - [x] Added size classes; should work across all modern iPhone models
 - [x] Launch screen and logo matching app's color scheme

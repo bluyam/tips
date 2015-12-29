@@ -57,6 +57,18 @@ class ViewController: UIViewController {
         tipControl.selectedSegmentIndex = 1
     }
     
+    func setDoubleWithPersistance(value: Double, key: String) {
+        if (defaults.objectForKey(key) == nil) {
+            defaults.setDouble(value, forKey: key)
+        }
+    }
+    
+    func setBoolWithPersistance(value: Bool, key: String) {
+        if (defaults.objectForKey(key) == nil) {
+            defaults.setBool(value, forKey: key)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -73,14 +85,16 @@ class ViewController: UIViewController {
         
         initializeAmountScreen()
         
-        defaults.setDouble(0.1, forKey: "tipBad")
-        defaults.setDouble(0.15, forKey: "tipOK")
-        defaults.setDouble(0.18, forKey: "tipGood")
-        defaults.setDouble(0.2, forKey: "tipGreat")
-        defaults.setBool(false, forKey: "round")
-        defaults.setBool(true, forKey: "shakeToClear")
-        defaults.setBool(false, forKey: "includeTax")
-        defaults.setDouble(8.25, forKey: "taxPercentage")
+        setDoubleWithPersistance(0.1, key: "tipBad")
+        setDoubleWithPersistance(0.15, key: "tipOK")
+        setDoubleWithPersistance(0.18, key: "tipGood")
+        setDoubleWithPersistance(0.2, key: "tipGreat")
+        setBoolWithPersistance(false, key: "round")
+        setBoolWithPersistance(true, key: "shakeToClear")
+        setBoolWithPersistance(false, key: "includeTax")
+        setDoubleWithPersistance(8.25, key: "taxPercentage")
+        
+        
         
         defaultTopConstraintConstant = self.billFieldTopConstraint.constant
         
