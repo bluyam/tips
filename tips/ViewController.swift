@@ -14,8 +14,11 @@
 //  Actions: Tie in to event
 //  
 //  TODO: Save Tip Defaults to plist
-//        Make text fit in box
-//        Make README
+//        Include Bill Field in animation
+//        Bubble up animation of logo for launch screen
+//        Tap anywhere on the screen when blank to select text box
+//        Default rating setting (good, bad, etc.) (save to plist)
+//        Color theme selector (halloween, pink lemonade, evergreen) (save to plist)
 
 import UIKit
 
@@ -33,11 +36,14 @@ class ViewController: UIViewController {
     @IBOutlet var fullView: UIView!
     @IBOutlet var detailView: UIView!
     
+    @IBOutlet var billFieldTopConstraint: NSLayoutConstraint!
     @IBOutlet var ratingSegmentedControl: UISegmentedControl!
     
     let defaults = NSUserDefaults.standardUserDefaults()
     
     var firstLoad = true
+    
+    var defaultTopConstraintConstant : CGFloat = 0.0
 
     var tipPercentages : [Double] = []
     
@@ -76,8 +82,8 @@ class ViewController: UIViewController {
         defaults.setBool(false, forKey: "includeTax")
         defaults.setDouble(8.25, forKey: "taxPercentage")
         
-        self.hideDetailView()
-        print(self.detailView.layer.frame.origin.y)
+        defaultTopConstraintConstant = self.billFieldTopConstraint.constant
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -127,17 +133,17 @@ class ViewController: UIViewController {
         totalLabel4.text = numberFormatter.stringFromNumber(total/4)
     }
     
-    // probably an autolayout issue
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         if (defaults.boolForKey("shakeToClear")) {
             self.hideDetailView()
             self.billField.text = ""
-            // billField.becomeFirstResponder()
+            billField.becomeFirstResponder()
         }
     }
     
     func hideDetailView() {
-        UIView.animateWithDuration(0.4, animations: {
+        UIView.animateWithDuration(0.35, animations: {
+            // self.billFieldTopConstraint.constant = CGFloat(154)
             self.detailView.layer.frame.origin.y = self.view.frame.maxY
             self.ratingSegmentedControl.layer.frame.origin.y = CGFloat(self.view.frame.maxY-44)
             self.detailView.alpha = 0
@@ -145,7 +151,18 @@ class ViewController: UIViewController {
         })
     }
     
+    func showDetailView() {
+        UIView.animateWithDuration(0.35, animations: {
+            // self.billFieldTopConstraint.constant = self.defaultTopConstraintConstant
+            self.detailView.frame.origin.y = CGFloat(219)
+            self.ratingSegmentedControl.frame.origin.y = CGFloat(175)
+            self.detailView.alpha = 1
+            self.ratingSegmentedControl.alpha = 1
+        })
+    }
+    
     @IBAction func onEditingChanged(sender: AnyObject) {
+        print("on editing changed called")
         if (billField.text == "") {
             self.hideDetailView()
         }
@@ -156,12 +173,7 @@ class ViewController: UIViewController {
                 firstLoad = false
             }
             recalculate()
-            UIView.animateWithDuration(0.4, animations: {
-                self.detailView.frame.origin.y = CGFloat(219)
-                self.ratingSegmentedControl.frame.origin.y = CGFloat(175)
-                self.detailView.alpha = 1
-                self.ratingSegmentedControl.alpha = 1
-            })
+            self.showDetailView()
         }
     }
     

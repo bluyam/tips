@@ -29,7 +29,7 @@
                                 </items>
                             </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-Pt-fJ2">
-                                <rect key="frame" x="24" y="175" width="560" height="29"/>
+                                <rect key="frame" x="24" y="175" width="556" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="mr3-BU-lDd"/>
                                 </constraints>
@@ -45,7 +45,7 @@
                                 </connections>
                             </segmentedControl>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-hO-DdP">
-                                <rect key="frame" x="24" y="72" width="560" height="95"/>
+                                <rect key="frame" x="24" y="72" width="556" height="95"/>
                                 <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="95" id="UmF-BE-x7E"/>
@@ -156,7 +156,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$120.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="33" translatesAutoresizingMaskIntoConstraints="NO" id="AX2-11-gHR">
-                                        <rect key="frame" x="3" y="43" width="577" height="98"/>
+                                        <rect key="frame" x="20" y="43" width="560" height="98"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="577" id="vxh-WZ-OhU"/>
                                         </constraints>
@@ -180,7 +180,7 @@
                                     <constraint firstItem="Lr7-N7-BeS" firstAttribute="bottom" secondItem="cUx-Np-YXR" secondAttribute="bottom" id="CDb-yK-EFq"/>
                                     <constraint firstItem="6QE-La-IwY" firstAttribute="trailing" secondItem="C7M-wQ-nfj" secondAttribute="trailing" id="CzB-xt-gpt"/>
                                     <constraint firstItem="PW6-I6-J66" firstAttribute="top" secondItem="QhG-fj-iaO" secondAttribute="topMargin" id="DhB-N8-SfU"/>
-                                    <constraint firstItem="AX2-11-gHR" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="3" id="DyA-2A-Rot"/>
+                                    <constraint firstItem="AX2-11-gHR" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="20" id="DyA-2A-Rot"/>
                                     <constraint firstItem="cUx-Np-YXR" firstAttribute="bottom" secondItem="cN9-ah-dGM" secondAttribute="bottom" id="EEW-fM-xZF"/>
                                     <constraint firstItem="Lr7-N7-BeS" firstAttribute="bottom" secondItem="Zca-qq-ruI" secondAttribute="bottom" id="FG7-2d-nLQ"/>
                                     <constraint firstItem="6QE-La-IwY" firstAttribute="leading" secondItem="C7M-wQ-nfj" secondAttribute="leading" id="H4O-Sh-62w"/>
@@ -240,7 +240,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="bottom" secondItem="SYs-Q8-rxe" secondAttribute="top" id="07w-Lo-ycp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EmX-Pt-fJ2" secondAttribute="trailing" constant="-4" id="0mX-nW-zC7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EmX-Pt-fJ2" secondAttribute="trailing" id="0mX-nW-zC7"/>
                             <constraint firstAttribute="trailing" secondItem="5GL-88-ZiN" secondAttribute="trailing" id="HCZ-QJ-G11"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="top" secondItem="eYy-hO-DdP" secondAttribute="bottom" constant="8" symbolic="YES" id="HK9-5Q-g35"/>
                             <constraint firstItem="5GL-88-ZiN" firstAttribute="bottom" secondItem="o2U-lW-Mpc" secondAttribute="bottom" id="PPV-Ej-L8c"/>
@@ -251,7 +251,7 @@
                             <constraint firstItem="5GL-88-ZiN" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" id="kYr-ve-mFz"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="trailing" secondItem="eYy-hO-DdP" secondAttribute="trailing" id="lkU-dY-2gR"/>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="top" secondItem="EmX-Pt-fJ2" secondAttribute="bottom" constant="16" id="su7-W0-qz9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eYy-hO-DdP" secondAttribute="trailing" constant="-4" id="xNz-B6-Zau"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eYy-hO-DdP" secondAttribute="trailing" id="xNz-B6-Zau"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="leading" secondItem="eYy-hO-DdP" secondAttribute="leading" id="y3D-jh-zIP"/>
                             <constraint firstItem="eYy-hO-DdP" firstAttribute="top" secondItem="o2U-lW-Mpc" secondAttribute="bottom" constant="8" symbolic="YES" id="zfO-XI-3mR"/>
                         </constraints>
@@ -274,6 +274,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="eYy-hO-DdP" id="941-ue-jEG"/>
+                        <outlet property="billFieldTopConstraint" destination="zfO-XI-3mR" id="DSK-VK-ObS"/>
                         <outlet property="detailView" destination="QhG-fj-iaO" id="BAg-6L-fgq"/>
                         <outlet property="fullView" destination="kh9-bI-dsS" id="CHi-hA-L89"/>
                         <outlet property="percentageLabel" destination="urB-gB-yf0" id="kzz-oD-s8U"/>
