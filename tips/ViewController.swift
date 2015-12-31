@@ -69,6 +69,15 @@ class ViewController: UIViewController {
         }
     }
     
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -94,10 +103,15 @@ class ViewController: UIViewController {
         setBoolWithPersistance(false, key: "includeTax")
         setDoubleWithPersistance(8.25, key: "taxPercentage")
         
-        
-        
         defaultTopConstraintConstant = self.billFieldTopConstraint.constant
         
+        print(self.navigationItem.rightBarButtonItem?.titleTextAttributesForState(UIControlState.Normal))
+        
+        // self.navigationController?.navigationBar.barTintColor = UIColorFromRGB(0xFFB892)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColorFromRGB(0x474948),
+            NSFontAttributeName: UIFont.systemFontOfSize(22, weight: UIFontWeightLight)]
+        
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFontOfSize(15, weight: UIFontWeightLight)], forState: UIControlState.Normal)
     }
     
     override func viewDidLayoutSubviews() {

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F5239CAD1C35E0F300D9CADF /* SettingsGear.png in Resources */ = {isa = PBXBuildFile; fileRef = F5239CAC1C35E0F300D9CADF /* SettingsGear.png */; };
+		F5239CAF1C35E27A00D9CADF /* SettingsGear46.png in Resources */ = {isa = PBXBuildFile; fileRef = F5239CAE1C35E27A00D9CADF /* SettingsGear46.png */; };
+		F5239CB11C35E48700D9CADF /* SettingsGear32.png in Resources */ = {isa = PBXBuildFile; fileRef = F5239CB01C35E48700D9CADF /* SettingsGear32.png */; };
+		F5239CB31C35E57500D9CADF /* SettingsGear24.png in Resources */ = {isa = PBXBuildFile; fileRef = F5239CB21C35E57500D9CADF /* SettingsGear24.png */; };
 		F524697E1C27A75F00FE7404 /* TaxSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */; };
 		F52622C41C1CF97B00F79090 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = F52622C31C1CF97B00F79090 /* LaunchImage.png */; };
 		F527794F1C2BA28300797EF5 /* user.png in Resources */ = {isa = PBXBuildFile; fileRef = F527794E1C2BA28300797EF5 /* user.png */; };
@@ -30,6 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F5239CAC1C35E0F300D9CADF /* SettingsGear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsGear.png; sourceTree = "<group>"; };
+		F5239CAE1C35E27A00D9CADF /* SettingsGear46.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsGear46.png; sourceTree = "<group>"; };
+		F5239CB01C35E48700D9CADF /* SettingsGear32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SettingsGear32.png; sourceTree = "<group>"; };
+		F5239CB21C35E57500D9CADF /* SettingsGear24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = SettingsGear24.png; path = ../../../../Downloads/SettingsGear24.png; sourceTree = "<group>"; };
 		F524697D1C27A75F00FE7404 /* TaxSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TaxSettingsViewController.swift; path = ../TaxSettingsViewController.swift; sourceTree = "<group>"; };
 		F52622C31C1CF97B00F79090 /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		F527794E1C2BA28300797EF5 /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user.png; path = ../../../../Downloads/user.png; sourceTree = "<group>"; };
@@ -90,6 +98,10 @@
 				F547FAEE1C0EA3C50055ECFD /* AppDelegate.swift */,
 				F547FAF01C0EA3C50055ECFD /* ViewController.swift */,
 				F547FAF21C0EA3C50055ECFD /* Main.storyboard */,
+				F5239CB21C35E57500D9CADF /* SettingsGear24.png */,
+				F5239CB01C35E48700D9CADF /* SettingsGear32.png */,
+				F5239CAC1C35E0F300D9CADF /* SettingsGear.png */,
+				F5239CAE1C35E27A00D9CADF /* SettingsGear46.png */,
 				F527794E1C2BA28300797EF5 /* user.png */,
 				F547FAF51C0EA3C50055ECFD /* Images.xcassets */,
 				F52622C31C1CF97B00F79090 /* LaunchImage.png */,
@@ -207,9 +219,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5239CAF1C35E27A00D9CADF /* SettingsGear46.png in Resources */,
+				F5239CB31C35E57500D9CADF /* SettingsGear24.png in Resources */,
 				F547FAF41C0EA3C50055ECFD /* Main.storyboard in Resources */,
+				F5239CB11C35E48700D9CADF /* SettingsGear32.png in Resources */,
 				F527794F1C2BA28300797EF5 /* user.png in Resources */,
 				F547FAF91C0EA3C50055ECFD /* LaunchScreen.xib in Resources */,
+				F5239CAD1C35E0F300D9CADF /* SettingsGear.png in Resources */,
 				F52622C41C1CF97B00F79090 /* LaunchImage.png in Resources */,
 				F547FAF61C0EA3C50055ECFD /* Images.xcassets in Resources */,
 			);

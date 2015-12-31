@@ -190,6 +190,8 @@ class SettingsViewController: UITableViewController {
     */
     
     override func viewWillAppear(animated: Bool) {
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFontOfSize(18, weight: UIFontWeightLight)], forState: UIControlState.Normal)
+        
         refreshTaxPercentageLabel()
     }
 

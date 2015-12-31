@@ -23,6 +23,8 @@ class TaxSettingsViewController: UITableViewController {
         includeSwitch.on = defaults.boolForKey("includeTax")
         print(defaults.boolForKey("includeTax"))
         
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFontOfSize(18, weight: UIFontWeightLight)], forState: UIControlState.Normal)
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -113,6 +115,7 @@ class TaxSettingsViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
     
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)

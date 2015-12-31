@@ -20,9 +20,11 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-88-ZiN">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
+                                </textAttributes>
                                 <items>
-                                    <navigationItem title="Tip Calculator" id="6s1-dP-HKk">
+                                    <navigationItem title="Tipster" id="6s1-dP-HKk">
                                         <barButtonItem key="rightBarButtonItem" title="Settings" id="fZV-3M-QZk"/>
                                     </navigationItem>
                                 </items>
@@ -43,25 +45,6 @@
                                     <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Shu-Ca-PPu"/>
                                 </connections>
                             </segmentedControl>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-hO-DdP">
-                                <rect key="frame" x="24" y="72" width="556" height="95"/>
-                                <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="95" id="UmF-BE-x7E"/>
-                                    <constraint firstAttribute="width" constant="560" id="bez-8u-Quq"/>
-                                </constraints>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="61"/>
-                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="bez-8u-Quq"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="oxp-f3-uiA"/>
-                                </connections>
-                            </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QhG-fj-iaO">
                                 <rect key="frame" x="0.0" y="219" width="600" height="381"/>
                                 <subviews>
@@ -177,6 +160,7 @@
                                     <constraint firstItem="PdO-e8-v7c" firstAttribute="bottom" secondItem="JaT-Hx-AJe" secondAttribute="bottom" id="B2z-ES-gh1"/>
                                     <constraint firstItem="JaT-Hx-AJe" firstAttribute="top" secondItem="YMg-It-LKx" secondAttribute="bottom" constant="30" id="BOk-Gd-QTO"/>
                                     <constraint firstItem="Lr7-N7-BeS" firstAttribute="bottom" secondItem="cUx-Np-YXR" secondAttribute="bottom" id="CDb-yK-EFq"/>
+                                    <constraint firstItem="YMg-It-LKx" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="20" id="CkE-ju-mKp"/>
                                     <constraint firstItem="6QE-La-IwY" firstAttribute="trailing" secondItem="C7M-wQ-nfj" secondAttribute="trailing" id="CzB-xt-gpt"/>
                                     <constraint firstItem="PW6-I6-J66" firstAttribute="top" secondItem="QhG-fj-iaO" secondAttribute="topMargin" id="DhB-N8-SfU"/>
                                     <constraint firstItem="AX2-11-gHR" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" constant="20" id="DyA-2A-Rot"/>
@@ -227,12 +211,32 @@
                                     <mask key="constraints">
                                         <exclude reference="Tbo-gc-VMy"/>
                                         <exclude reference="fHV-hQ-nxt"/>
+                                        <exclude reference="ibu-NV-LhX"/>
                                         <exclude reference="n7p-nQ-KbA"/>
                                         <exclude reference="1EX-fQ-pVB"/>
                                         <exclude reference="WhL-Oq-PwA"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$" textAlignment="right" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eYy-hO-DdP">
+                                <rect key="frame" x="24" y="72" width="556" height="95"/>
+                                <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="95" id="UmF-BE-x7E"/>
+                                    <constraint firstAttribute="width" constant="560" id="bez-8u-Quq"/>
+                                </constraints>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="61"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bez-8u-Quq"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onEditingChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="oxp-f3-uiA"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,6 +270,7 @@
                     <navigationItem key="navigationItem" title="Tipster" id="W5I-zl-bKI">
                         <barButtonItem key="backBarButtonItem" title="Back" id="gfQ-tq-1kP"/>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="eIp-Ca-z4h">
+                            <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="zZT-Lb-h11" kind="show" id="ya2-fo-DLr"/>
                             </connections>
@@ -707,6 +712,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tS-0h-10r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="h4I-Aw-DU1">
