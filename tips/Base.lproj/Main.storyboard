@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -316,7 +315,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-aV-4WL">
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-aV-4WL">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
                                                     <color key="onTintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
@@ -335,13 +334,18 @@
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
+                                                <constraint firstItem="zeL-aV-4WL" firstAttribute="centerY" secondItem="ZBW-7E-ISq" secondAttribute="centerY" id="2U2-ov-sNT"/>
                                                 <constraint firstItem="kYU-pg-SOg" firstAttribute="top" secondItem="ZBW-7E-ISq" secondAttribute="topMargin" constant="3" id="5Vx-p7-8yA"/>
                                                 <constraint firstItem="kYU-pg-SOg" firstAttribute="centerY" secondItem="ZBW-7E-ISq" secondAttribute="centerY" id="8Mh-GY-B7A"/>
-                                                <constraint firstItem="zeL-aV-4WL" firstAttribute="trailing" secondItem="ZBW-7E-ISq" secondAttribute="trailingMargin" id="8Mt-Tm-ogi"/>
-                                                <constraint firstItem="zeL-aV-4WL" firstAttribute="top" secondItem="ZBW-7E-ISq" secondAttribute="topMargin" id="9G6-IC-2FT"/>
+                                                <constraint firstItem="zeL-aV-4WL" firstAttribute="top" secondItem="ZBW-7E-ISq" secondAttribute="topMargin" constant="-2" id="KUx-w6-zcq"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="zeL-aV-4WL" secondAttribute="trailing" id="W4K-FS-K5P"/>
                                                 <constraint firstItem="kYU-pg-SOg" firstAttribute="leading" secondItem="ZBW-7E-ISq" secondAttribute="leadingMargin" constant="6" id="fma-U1-N4Q"/>
-                                                <constraint firstItem="zeL-aV-4WL" firstAttribute="centerY" secondItem="kYU-pg-SOg" secondAttribute="centerY" id="qWY-WD-SsE"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="KUx-w6-zcq"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="o8W-0w-4oF">
@@ -384,36 +388,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Include Tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tC-3E-T5U">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Include Tax" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tC-3E-T5U">
                                                     <rect key="frame" x="14" y="11" width="162" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="162" id="YfV-he-it4"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8.25%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-f5-PpI">
-                                                    <rect key="frame" x="405" y="11" width="162" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="162" id="ZW5-M3-z44"/>
-                                                    </constraints>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="8.25%" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8eY-f5-PpI">
+                                                    <rect key="frame" x="405" y="12" width="162" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="centerY" secondItem="Rsr-AA-adq" secondAttribute="centerY" id="1fc-5J-tgI"/>
-                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="leading" secondItem="Rsr-AA-adq" secondAttribute="leadingMargin" constant="6" id="9JR-Wz-Oh6"/>
-                                                <constraint firstItem="8eY-f5-PpI" firstAttribute="firstBaseline" secondItem="6tC-3E-T5U" secondAttribute="firstBaseline" id="AWQ-mU-UDO"/>
-                                                <constraint firstItem="8eY-f5-PpI" firstAttribute="leading" secondItem="Rsr-AA-adq" secondAttribute="leading" constant="405" id="eq4-e2-f45"/>
-                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="top" secondItem="Rsr-AA-adq" secondAttribute="topMargin" constant="3" id="hju-C0-bBl"/>
-                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="baseline" secondItem="8eY-f5-PpI" secondAttribute="baseline" id="ppj-k6-4W9"/>
+                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="leading" secondItem="Rsr-AA-adq" secondAttribute="leadingMargin" constant="6" id="Dkl-By-QH7"/>
+                                                <constraint firstItem="6tC-3E-T5U" firstAttribute="centerY" secondItem="Rsr-AA-adq" secondAttribute="centerY" id="Lh0-IE-B3s"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="8eY-f5-PpI" secondAttribute="trailing" constant="33" id="TPa-Ma-phz"/>
+                                            <constraint firstAttribute="trailing" secondItem="8eY-f5-PpI" secondAttribute="trailing" constant="33" id="R9Z-X2-ECo"/>
+                                            <constraint firstItem="8eY-f5-PpI" firstAttribute="centerY" secondItem="LPb-UW-SVA" secondAttribute="centerY" id="aFQ-uJ-dDh"/>
                                         </constraints>
                                         <connections>
                                             <segue destination="HPf-9A-iH3" kind="show" id="jh2-qj-ldL"/>
@@ -587,7 +582,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awy-aP-nQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2287.5" y="338.02816901408448"/>
+            <point key="canvasLocation" x="2287" y="338"/>
         </scene>
         <!--Tax Settings View Controller-->
         <scene sceneID="XYt-vP-OAM">

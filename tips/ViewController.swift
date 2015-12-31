@@ -13,8 +13,8 @@
 //  Outlets: Name view elements in code
 //  Actions: Tie in to event
 //  
-//  TODO: Save Tip Defaults to plist
-//        Include Bill Field in animation
+//  TODO: Include Bill Field in animation
+//        Fix constraint conflicts in settings view
 //        Bubble up animation of logo for launch screen
 //        Tap anywhere on the screen when blank to select text box
 //        Default rating setting (good, bad, etc.) (save to plist)
