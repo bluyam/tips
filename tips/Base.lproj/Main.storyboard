@@ -18,17 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5GL-88-ZiN">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Tipster" id="6s1-dP-HKk">
-                                        <barButtonItem key="rightBarButtonItem" title="Settings" id="fZV-3M-QZk"/>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EmX-Pt-fJ2">
                                 <rect key="frame" x="24" y="175" width="556" height="29"/>
                                 <constraints>
@@ -244,15 +233,12 @@
                         <constraints>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="bottom" secondItem="SYs-Q8-rxe" secondAttribute="top" id="07w-Lo-ycp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EmX-Pt-fJ2" secondAttribute="trailing" id="0mX-nW-zC7"/>
-                            <constraint firstAttribute="trailing" secondItem="5GL-88-ZiN" secondAttribute="trailing" id="HCZ-QJ-G11"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="top" secondItem="eYy-hO-DdP" secondAttribute="bottom" constant="8" symbolic="YES" id="HK9-5Q-g35"/>
-                            <constraint firstItem="5GL-88-ZiN" firstAttribute="bottom" secondItem="o2U-lW-Mpc" secondAttribute="bottom" id="PPV-Ej-L8c"/>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="d28-Rv-R6K"/>
                             <constraint firstItem="eYy-hO-DdP" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="dFI-BX-o99"/>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="top" secondItem="EmX-Pt-fJ2" secondAttribute="bottom" constant="16" id="dUt-Vz-Qoy"/>
-                            <constraint firstItem="5GL-88-ZiN" firstAttribute="trailing" secondItem="QhG-fj-iaO" secondAttribute="trailing" id="f7J-6Q-FOy"/>
-                            <constraint firstItem="5GL-88-ZiN" firstAttribute="leading" secondItem="QhG-fj-iaO" secondAttribute="leading" id="kYr-ve-mFz"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="trailing" secondItem="eYy-hO-DdP" secondAttribute="trailing" id="lkU-dY-2gR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="QhG-fj-iaO" secondAttribute="trailing" constant="-20" id="luE-my-14Q"/>
                             <constraint firstItem="QhG-fj-iaO" firstAttribute="top" secondItem="EmX-Pt-fJ2" secondAttribute="bottom" constant="16" id="su7-W0-qz9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eYy-hO-DdP" secondAttribute="trailing" id="xNz-B6-Zau"/>
                             <constraint firstItem="EmX-Pt-fJ2" firstAttribute="leading" secondItem="eYy-hO-DdP" secondAttribute="leading" id="y3D-jh-zIP"/>
@@ -268,9 +254,11 @@
                         </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Tipster" id="W5I-zl-bKI">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="gfQ-tq-1kP"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="gfQ-tq-1kP">
+                            <color key="tintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="eIp-Ca-z4h">
-                            <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="zZT-Lb-h11" kind="show" id="ya2-fo-DLr"/>
                             </connections>
@@ -474,6 +462,7 @@
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minimumValue="0.050000000000000003" maximumValue="0.29999999999999999" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="d4j-ba-9yO">
                                                     <rect key="frame" x="253" y="7" width="94" height="29"/>
+                                                    <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="okChanged:" destination="zZT-Lb-h11" eventType="valueChanged" id="Pzr-nW-vFG"/>
                                                     </connections>
@@ -508,6 +497,7 @@
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.17999999999999999" minimumValue="0.050000000000000003" maximumValue="0.29999999999999999" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="coS-xA-lVq">
                                                     <rect key="frame" x="253" y="7" width="94" height="29"/>
+                                                    <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="goodChanged:" destination="zZT-Lb-h11" eventType="valueChanged" id="0bQ-R2-jOM"/>
                                                     </connections>
@@ -542,6 +532,7 @@
                                                 </label>
                                                 <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.20000000000000001" minimumValue="0.050000000000000003" maximumValue="0.29999999999999999" stepValue="0.01" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-Hj-Kg5">
                                                     <rect key="frame" x="253" y="7" width="94" height="29"/>
+                                                    <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <connections>
                                                         <action selector="greatChanged:" destination="zZT-Lb-h11" eventType="valueChanged" id="NO0-Om-7tA"/>
                                                     </connections>
@@ -568,7 +559,11 @@
                             <outlet property="delegate" destination="zZT-Lb-h11" id="ZuE-81-prq"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="QtY-pb-45P"/>
+                    <navigationItem key="navigationItem" title="Settings" id="QtY-pb-45P">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Jib-8H-R4J">
+                            <color key="tintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="OKLabel" destination="asO-OB-gRk" id="fbf-9T-C2V"/>
                         <outlet property="badLabel" destination="V8Z-aJ-mQ1" id="8FD-MJ-87g"/>
@@ -688,7 +683,11 @@
                             <outletCollection property="gestureRecognizers" destination="y5h-xn-fQb" appends="YES" id="8EP-i6-YaT"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Gb6-Wn-GlW"/>
+                    <navigationItem key="navigationItem" id="Gb6-Wn-GlW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="gej-8Y-R5Z">
+                            <color key="tintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="FullTableView" destination="j1R-5S-Tk4" id="Exx-wi-zCB"/>
                         <outlet property="includeSwitch" destination="Rr6-BP-fql" id="rRl-dl-s5j"/>
@@ -712,7 +711,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9tS-0h-10r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="h4I-Aw-DU1">
@@ -730,5 +729,5 @@
     <resources>
         <image name="user.png" width="128" height="128"/>
     </resources>
-    <color key="tintColor" red="0.34509803919999998" green="0.37647058820000001" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="1" green="0.65281166450000006" blue="0.40745251220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

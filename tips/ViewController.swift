@@ -108,10 +108,14 @@ class ViewController: UIViewController {
         print(self.navigationItem.rightBarButtonItem?.titleTextAttributesForState(UIControlState.Normal))
         
         // self.navigationController?.navigationBar.barTintColor = UIColorFromRGB(0xFFB892)
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColorFromRGB(0x474948),
-            NSFontAttributeName: UIFont.systemFontOfSize(22, weight: UIFontWeightLight)]
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
-        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.systemFontOfSize(15, weight: UIFontWeightLight)], forState: UIControlState.Normal)
+        UINavigationBar.appearance().tintColor = UIColorFromRGB(0xFFA668)
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColorFromRGB(0xFFA668),
+            NSFontAttributeName: UIFont.systemFontOfSize(23, weight: UIFontWeightLight)]
+        
+        self.navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSForegroundColorAttributeName: UIColorFromRGB(0xFFA668), NSFontAttributeName: UIFont.systemFontOfSize(16, weight: UIFontWeightLight)], forState: UIControlState.Normal)
     }
     
     override func viewDidLayoutSubviews() {
