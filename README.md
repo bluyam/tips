@@ -29,6 +29,7 @@ The following **additional** features are implemented:
 - [x] Shake to clear option
 - [x] Added size classes; should work across all modern iPhone models
 - [x] Launch screen and logo matching app's color scheme
+- [x] Default Service Rating Option
 
 ## Video Walkthrough
 
